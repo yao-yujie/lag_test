@@ -132,15 +132,15 @@ class Fit_plot(object):
 		a1 = self.result
 		for para in a1.get_equal_weighted_posterior()[::100,:-1]:
 			if ax is not None:
-				ax.plot(self.energyc,self.model(self.energyc,para),'-', color='k', alpha=0.3)
+				ax.plot(self.energyc,-self.model(self.energyc,para),'-', color='k', alpha=0.3)
 			else:
-				plt.plot(self.energyc,self.model(self.energyc,para),'-', color='k', alpha=0.3)
+				plt.plot(self.energyc,-self.model(self.energyc,para),'-', color='k', alpha=0.3)
 		
 		best_value = a1.get_best_fit()['parameters']
 		if ax is not None:
-			ax.plot(self.energyc,self.model(self.energyc,best_value),'-', color='r',label = 'best model')
+			ax.plot(self.energyc,-self.model(self.energyc,best_value),'-', color='r',label = 'best model')
 		else:
-			plt.plot(self.energyc,self.model(self.energyc,best_value),'-', color='r',label = 'best model')
+			plt.plot(self.energyc,-self.model(self.energyc,best_value),'-', color='r',label = 'best model')
 		
 	def plot_different(self,ax = None):
 		

@@ -37,7 +37,6 @@ def get_lag(data,band,bins,wind=None,sigma = 4,mcmc_num = 500,plot_savedir = Non
 				cs0 = csi
 				cs_err0 = rate_err_i
 				return_list.append([index_,0,1,1])
-				
 		else:
 			num_i = np.histogram(t_i,bins=bins)[0]
 			num_err_i = np.sqrt(num_i)
@@ -54,7 +53,7 @@ def get_lag(data,band,bins,wind=None,sigma = 4,mcmc_num = 500,plot_savedir = Non
 				else:
 					savename = None
 				lag,lag_errl,lag_errh = get_one_lag(cs0[wind_index],csi[wind_index],cs_err0[wind_index],rate_err_i[wind_index],t_c[wind_index],mcmc_num=mcmc_num,save = savename)
-				lag_all = lag_all + lag*-1
+				lag_all = lag_all + lag
 				lag_errl2 = lag_errl2+lag_errl**2
 				lag_errh2 = lag_errh2 + lag_errh**2
 				return_list.append([index_,lag_all,np.sqrt(lag_errl2),np.sqrt(lag_errh2)])
