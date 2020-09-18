@@ -14,7 +14,7 @@ savetop = '/home/yao/Work/NEW_HR_TEST/样本挑选/ccf_test/完成/'
 data_top = '/home/yao/GBM_burst_data/data/'
 sample_link = '/home/yao/Work/NEW_HR_TEST/样本挑选/ccf_test/失败9.txt'
 
-binsize = 0.01
+binsize = 0.2
 e_band = get_band([8,800],10,ovelap=0,scale='log')
 bins = np.arange(-50,200,binsize)
 
