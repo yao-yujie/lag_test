@@ -22,8 +22,9 @@ for i in range(1,len(ty)):
 	t90[i]=float(t90[i])
 	ty_errl[i]=float(ty_errl[i])
 	ty_errh[i]=float(ty_errh[i])
-	
-
+	ty[i]=10**ty[i]
+	ty_errl[i]=10**ty_errl[i]
+	ty_errh[i]=10**ty_errh[i]
 	
 
 x=np.arange(0.005,130,0.1)
@@ -49,7 +50,7 @@ plt.xscale('log')
 plt.yscale('log')
 plt.scatter(t90[1:],ty[1:],s=4)
 plt.errorbar(t90[1:],ty[1:],yerr=[ty_errl[1:],ty_errh[1:]],fmt='.',elinewidth=1)
-plt.ylim(0.05,2)
+
 plt.xlim(0.05,130)
 plt.ylim(0.05,130)
 plt.xlabel('duration duration (s)')
